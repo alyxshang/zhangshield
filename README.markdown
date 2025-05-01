@@ -14,10 +14,16 @@ is a package for the ***Z***ig programming language I named it
 
 ## INSTALLATION :inbox_tray:
 
-To use the ***Zhangshield*** package in your Zig project, run the `zig fetch --save git+https://github.com/alyxshang/zhangshield.git` command from the root of your Zig project. This will add the ***Zhangshield*** package to your `build.zig.zon` file.
+To use the ***Zhangshield*** package in your Zig project, run the following command
+from the root of your Zig project:
 
-To inform the compiler, you would have to also add this library to your
-`build.zig` build script. This may look something like this:
+```bash
+zig fetch --save git+https://github.com/alyxshang/zhangshield.git
+``` 
+
+This will add the ***Zhangshield*** package to your `build.zig.zon` file.
+
+To also inform the compiler about this new package you would have to also add this library to your `build.zig` build script. This may look something like this:
 
 ```Zig
 const lib_mod = b.createModule(
@@ -44,7 +50,7 @@ const zhangshield = @import("zhangshield");
 
 ## USAGE :hammer:
 
-To view this package's API please clone this repository and run the command `zig build-lib -femit-docs src/root.zig` from the repository's root or view them [here](https://alyxshang.boo/zhangshield).
+To view this package's API please clone this repository and run the command `zig build-lib -femit-docs src/root.zig` from the repository's root or view them [here](https://alyxshang.github.io/zhangshield).
 
 ## CHANGELOG :black_nib:
 
