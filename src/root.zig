@@ -11,9 +11,9 @@ pub const StringType = enum(u8) {
 
 /// Returns the distance between two
 /// digits. This function does not
-/// accounts for one argument being
+/// account for one argument being
 /// larger than the other or the
-/// other  way around. The distance
+/// other way around. The distance
 /// is returned as a signed integer.
 pub export fn digit_distance(a: i32, b: i32) i32 {
     var result: i32 = 0;
@@ -41,6 +41,7 @@ pub export fn is_upper(subject: u8) bool {
     }
     return result;
 }
+
 /// This function checks whether the
 /// supplied character is a lowercase
 /// letter or not.
