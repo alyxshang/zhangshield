@@ -29,7 +29,8 @@ pub export fn digit_distance(a: i32, b: i32) i32 {
 
 /// This function checks whether the
 /// supplied character is an uppercase
-/// letter or not.
+/// letter or not. A boolean to reflect
+/// this is returned.
 pub export fn is_upper(subject: u8) bool {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var result: bool = false;
@@ -44,7 +45,8 @@ pub export fn is_upper(subject: u8) bool {
 
 /// This function checks whether the
 /// supplied character is a lowercase
-/// letter or not.
+/// letter or not. A boolean to reflect
+/// this is returned.
 pub export fn is_lower(subject: u8) bool {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
     var result: bool = false;
@@ -60,14 +62,16 @@ pub export fn is_lower(subject: u8) bool {
 /// This function checks whether the supplied
 /// character is a letter in the alphabet.
 /// The function accounts for both uppercase
-/// or lowercase letters.
+/// or lowercase letters. A boolean to reflect
+/// this is returned.
 pub export fn is_letter(subject: u8) bool {
     return is_lower(subject) or is_upper(subject);
 }
 
 /// This function checks whether the
 /// supplied character is a digit or not.
-/// Depending on this, a boolean is returned.
+/// A boolean to reflect
+/// this is returned.
 pub export fn is_digit(subject: u8) bool {
     var result: bool = false;
     const digits = "1234567890";
@@ -80,8 +84,8 @@ pub export fn is_digit(subject: u8) bool {
     return result;
 }
 
-/// This function attempts to
-/// determine the type of character
+/// This function determines
+/// the type of character
 /// supplied. One variant of the 
 /// `StringType` enum is returned.
 pub export fn char_type(
@@ -98,8 +102,8 @@ pub export fn char_type(
     return str_type;
 }
 
-/// This function attempts to return
-/// the reduction of a character as
+/// This function returns the
+/// reduction of a character to
 /// a number. 
 pub export fn reduce_char_to_num(
     subject: u8, 
@@ -115,6 +119,10 @@ pub export fn reduce_char_to_num(
     return result;
 }
 
+/// This function returns
+/// the length of a string
+/// with a null-terminator
+/// as an unsigned integer.
 pub export fn str_len(
     subject: [*:0]const u8
 ) usize {
@@ -127,11 +135,11 @@ pub export fn str_len(
     return len;
 }
 
-/// This function attempts to
-/// determine a security score
+/// This function determines
+/// a security score
 /// for the given password. This
-/// score is returned as an 
-/// integer.
+/// score is returned as a 
+/// signed integer.
 pub export fn security_score(
     password: [*:0]const u8, 
     letterWeight: i32, 
