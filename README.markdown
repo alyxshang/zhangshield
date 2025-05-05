@@ -36,7 +36,7 @@ const lib_mod = b.createModule(
 lib_mod.addImport("zhangshield", lib_mod);
 ```
 
-This is just an example of how you would create a module for a library
+This is an example of how you would create a module for a library
 but this can also be used for an executable. The path `src/root.zig`
 would then change to `src/main.zig` or the path of any other modules.
 
