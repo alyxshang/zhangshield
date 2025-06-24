@@ -23,25 +23,7 @@ zig fetch --save git+https://github.com/alyxshang/zhangshield.git
 
 This will add the ***Zhangshield*** package to your `build.zig.zon` file.
 
-To also inform the compiler about this new package you would have to also add this library to your `build.zig` build script. This may look something like this:
-
-```Zig
-const lib_mod = b.createModule(
-    .{
-        .root_source_file = b.path("src/root.zig"),
-        .target = target,
-        .optimize = optimize,
-    }
-);
-lib_mod.addImport("zhangshield", lib_mod);
-```
-
-This is an example of how you would create a module for a library
-but this can also be used for an executable. The path `src/root.zig`
-would then change to `src/main.zig` or the path of any other modules.
-
-To use the ***Zhangshield*** namespace in your Zig code, you would add
-the following line to any Zig source code files you want to use this
+To also inform the compiler about this new package you would have to also add this library to your `build.zig` build script. To use the ***Zhangshield*** namespace in your Zig code, you would add the following line to any Zig source code files you want to use this
 package in:
 
 ```Zig
