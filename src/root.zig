@@ -15,7 +15,7 @@ pub const StringType = enum(u8) {
 /// larger than the other or the
 /// other way around. The distance
 /// is returned as a signed integer.
-pub export fn digit_distance(a: i32, b: i32) i32 {
+pub fn digit_distance(a: i32, b: i32) i32 {
     var result: i32 = 0;
     if (a > b) {
         result = a - b;
@@ -31,7 +31,7 @@ pub export fn digit_distance(a: i32, b: i32) i32 {
 /// supplied character is an uppercase
 /// letter or not. A boolean to reflect
 /// this is returned.
-pub export fn is_upper(subject: u8) bool {
+pub fn is_upper(subject: u8) bool {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var result: bool = false;
     for (0..26) |i| {
@@ -47,7 +47,7 @@ pub export fn is_upper(subject: u8) bool {
 /// supplied character is a lowercase
 /// letter or not. A boolean to reflect
 /// this is returned.
-pub export fn is_lower(subject: u8) bool {
+pub fn is_lower(subject: u8) bool {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
     var result: bool = false;
     for (0..26) |i| {
@@ -64,7 +64,7 @@ pub export fn is_lower(subject: u8) bool {
 /// The function accounts for both uppercase
 /// or lowercase letters. A boolean to reflect
 /// this is returned.
-pub export fn is_letter(subject: u8) bool {
+pub fn is_letter(subject: u8) bool {
     return is_lower(subject) or is_upper(subject);
 }
 
@@ -72,7 +72,7 @@ pub export fn is_letter(subject: u8) bool {
 /// supplied character is a digit or not.
 /// A boolean to reflect
 /// this is returned.
-pub export fn is_digit(subject: u8) bool {
+pub fn is_digit(subject: u8) bool {
     var result: bool = false;
     const digits = "1234567890";
     for (0..10) |i| {
@@ -88,7 +88,7 @@ pub export fn is_digit(subject: u8) bool {
 /// the type of character
 /// supplied. One variant of the 
 /// `StringType` enum is returned.
-pub export fn char_type(
+pub fn char_type(
     subject: u8
 ) StringType {
     var str_type: StringType = .SpecialChar;
@@ -105,7 +105,7 @@ pub export fn char_type(
 /// This function returns the
 /// reduction of a character to
 /// a number. 
-pub export fn reduce_char_to_num(
+pub fn reduce_char_to_num(
     subject: u8, 
     letterWeight: i32, 
     specialWeight: i32
@@ -123,7 +123,7 @@ pub export fn reduce_char_to_num(
 /// the length of a string
 /// with a null-terminator
 /// as an unsigned integer.
-pub export fn str_len(
+pub fn str_len(
     subject: [*:0]const u8
 ) usize {
     var len: usize = 0;
@@ -140,7 +140,7 @@ pub export fn str_len(
 /// for the given password. This
 /// score is returned as a 
 /// signed integer.
-pub export fn security_score(
+pub fn security_score(
     password: [*:0]const u8, 
     letterWeight: i32, 
     specialWeight: i32
